@@ -100,7 +100,6 @@ print('Hello, World!')
 with open('CO-OPS__9099064__wl.csv') as file:
     for line in file:
         print(line)
-        break
 					</code></pre>
 				</section>
 
@@ -117,9 +116,14 @@ with open(file_name) as file:
 					<p class="fragment">Everything in Python is some <em>type</em> of <em>object</em>. Objects contain <em>attributes</em>, usually data and related functions, called <em>methods</em>.</p>
 					<p class="fragment">Python is <em>dynamically typed</em> because it determines these types at runtime.</p>
 					<pre class="fragment"><code data-noescape class="python">
-type('World')
-type(to)
-type(print)
+file_name = 'CO-OPS__9099064__wl.csv'
+print(type(file_name))
+with open(file_name) as file:
+    print(type(file))
+    for line in file:
+        print(type(line))
+        print(line)
+        break
 					</code></pre>
 				</section>
 
@@ -128,7 +132,7 @@ type(print)
 					<p class="fragment">Python is also <em>strongly typed</em>. For example, some operations require operands of specific types.</p>
 					<p class="fragment">What happens when we do this?</p>
 					<pre class="fragment"><code data-noescape class="python">
-'World' + 3
+file_name + 3
 					</code></pre>
 				</section>
 
