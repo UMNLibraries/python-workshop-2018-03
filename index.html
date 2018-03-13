@@ -193,6 +193,31 @@ with open(file_name) as file:
 				</section>
 
 				<section>
+          <h2>Doing stuff with water levels...</h2>
+					<pre class="fragment"><code data-noescape class="python">
+with open(file_name) as file:
+    reader = csv.DictReader(file)
+    water_levels = []
+    for row in reader:
+        water_levels.append(row['water_level'])
+    water_levels_sum = sum(water_levels)
+					</code></pre>
+				</section>
+
+				<section>
+          <h2>Will this fix our problem?</h2>
+					<pre class="fragment"><code data-noescape class="python">
+with open(file_name) as file:
+    reader = csv.DictReader(file)
+    water_levels = []
+    for row in reader:
+        water_level = float(row['water_level'])
+        water_levels.append(water_level)
+    water_levels_sum = sum(water_levels)
+					</code></pre>
+				</section>
+
+				<section>
           <h2>Functions</h2>  
 					<pre class="fragment"><code data-noescape class="python">
 def hello(to):
