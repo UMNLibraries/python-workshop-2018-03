@@ -128,6 +128,20 @@ with open(file_name) as file:
 				</section>
 
 				<section>
+          <h2>Arrays</h2>
+					<pre class="fragment"><code data-noescape class="python">
+file_name = 'CO-OPS__9099064__wl.csv'
+with open(file_name) as file:
+    for line in file:
+        row = line.strip().split(',')
+        print(type(row))
+        print(row)
+        print(row[0])
+        break
+					</code></pre>
+				</section>
+
+				<section>
           <h2>Strong Typing</h2>
 					<p class="fragment">Python is also <em>strongly typed</em>. For example, some operations require operands of specific types.</p>
 					<p class="fragment">What happens when we do this?</p>
