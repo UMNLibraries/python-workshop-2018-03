@@ -152,13 +152,14 @@ with open(file_name) as file:
 				<section>
           <h2>What about the header?</h2>
 					<pre class="fragment"><code data-noescape class="python">
+import csv
 with open(file_name) as file:
-    line_count = -1
-    for line in file:
-        line_count = line_count + 1
-        if line_count == 0:
-            continue
-        row = line.strip().split(',')
+    has_header = csv.Sniffer().has_header(file.read(1024))
+    file.seek(0)
+    reader = csv.reader(file)
+    if has_header:
+        next(reader)
+    for row in reader:
         print(row[0], row[1])
         break
 					</code></pre>
