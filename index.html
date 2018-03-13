@@ -218,6 +218,22 @@ with open(file_name) as file:
 				</section>
 
 				<section>
+          <h2>Investigating further...</h2>
+					<pre class="fragment"><code data-noescape class="python">
+with open(file_name) as file:
+    reader = csv.DictReader(file)
+    water_levels = []
+    for row in reader:
+        if not (re.match(r'^\d+', row['water_level'])):
+            print('"{}"'.format(row['water_level']))
+            break
+        water_level = float(row['water_level'])
+        water_levels.append(water_level)
+    water_levels_sum = sum(water_levels)
+					</code></pre>
+				</section>
+
+				<section>
           <h2>Functions</h2>  
 					<pre class="fragment"><code data-noescape class="python">
 def hello(to):
